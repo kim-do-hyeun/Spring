@@ -3,16 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--    <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.EmailMessageSender" scope="singleton" destroy-method="destroy">-->
-<!--    </bean>-->
+    <bean id="emailMessageSender" class="com.nhnacademy.edu.springframework.messagesender.EmailMessageSender" scope="singleton" destroy-method="destroy">
+    </bean>
 
     <bean id="smsMessageSender" class="com.nhnacademy.edu.springframework.messagesender.SmsMessageSender" scope="prototype" init-method="init">
     </bean>
 
-    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.MessageSendService">
+    <bean id="messageSendService" class="com.nhnacademy.edu.springframework.messagesender.MessageSendService" autowire="byName">
 <!--        <constructor-arg ref="smsMessageSender" />-->
-        <property name="messageSender" ref="smsMessageSender"/>
+<!--        <property name="messageSender" ref="smsMessageSender"/>-->
     </bean>
+
 
 
 </beans>
