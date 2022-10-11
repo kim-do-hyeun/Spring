@@ -13,6 +13,7 @@ public class MessageSendService {
 
     public void setMessageSender(MessageSender messageSender) {
         this.messageSender = messageSender;
+        System.out.println("setMessage invoked!");
     }
 
     public void doSendMessage(){
