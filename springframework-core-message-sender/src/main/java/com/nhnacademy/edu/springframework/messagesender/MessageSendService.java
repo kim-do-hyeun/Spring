@@ -31,7 +31,7 @@ public class MessageSendService {
 //    }
 
     public void doSendMessage(){
-        System.out.println("name: " +this.from);
+//        System.out.println("name: " +this.from);
         messageSender.sendMessage(
             new User("doring98@naver.com","010-8234-5995"),
             "Message"
