@@ -9,6 +9,10 @@ public class SmsMessageSender implements MessageSender {
         System.out.println("init method called in SMSMessageSender");
     }
 
+    public void close(){
+        System.out.println("close SmsMessageSender");
+    }
+
     @Override
     public void sendMessage(User user, String message) {
         System.out.println("SMS Message Sent to " + user.phoneNumber + " " + message);

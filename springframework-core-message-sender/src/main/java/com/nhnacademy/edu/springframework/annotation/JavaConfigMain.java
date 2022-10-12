@@ -7,8 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class JavaConfigMain {
     public static void main(String[] args) {
-        String baseline = "com.nhnacademy.edu.springframework.annotation";
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(baseline);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MainConfig.class);
 
         MessageSender emailMessageSender = context.getBean("emailMessageSender", MessageSender.class);
         MessageSender smsMessageSender = context.getBean("smsMessageSender", MessageSender.class);
@@ -18,5 +17,7 @@ public class JavaConfigMain {
 
         smsMessageSender.sendMessage(new User("doring98@naver.com","010-8234-5995"),
             "Message");
+
+        context.close();
     }
 }
